@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
+using System.Runtime.CompilerServices;
 
 namespace OrangeHRM_Project.utilities.pages
 {
@@ -25,21 +26,23 @@ namespace OrangeHRM_Project.utilities.pages
 
         public Login() 
         {
-          // openBrowser();
+             openBrowser();
             //Initialize the webelements with the driver
-            BaseClass b = new BaseClass();
-            b.openBrowser();
+           
+           // openBrowser();
             PageFactory.InitElements(driver, this);
         }
 
         //Perform login
-        public void performLogin()
+        public void performLogin(String username, String Password)
+
         {
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+          
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("username")));
-            usernameBox.SendKeys("Admin");
-            passwordBox.SendKeys("admin123");
-            loginButton.Click();
+            usernameBox.SendKeys(username);
+            passwordBox.SendKeys(Password);
+          //  loginButton.Click();
 
         }
 

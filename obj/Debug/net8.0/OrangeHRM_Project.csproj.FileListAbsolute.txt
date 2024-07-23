@@ -115,3 +115,5 @@ C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\obj\Debug\net8.0\Orange
 C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\obj\Debug\net8.0\OrangeHRM_Project.genruntimeconfig.cache
 C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\obj\Debug\net8.0\ref\OrangeHRM_Project.dll
 C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\bin\Debug\net8.0\SeleniumExtras.PageObjects.dll
+C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\obj\Debug\net8.0\OrangeHRM_Project.sourcelink.json
+C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\bin\Debug\net8.0\testdata\login.json

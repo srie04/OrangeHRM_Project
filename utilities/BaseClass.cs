@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
@@ -20,7 +21,7 @@ namespace OrangeHRM_Project.utilities
 
         //Open broswer
         
-        public void openBrowser() //Chrome, Firefox, edge
+        public static void openBrowser() //Chrome, Firefox, edge
         {
 
             String browserName = ConfigurationManager.AppSettings["browser"];
@@ -50,6 +51,16 @@ namespace OrangeHRM_Project.utilities
 
         }
 
+        public static String readJson(String token)
+        {
+            String jsonString = File.ReadAllText("testdata/login.json");
+
+            JToken jsonObject = JToken.Parse(jsonString);
+
+            String value = jsonObject.SelectToken(token).Value<String>();
+
+            return value;
+        }
 
         public static void closeBrowser()
         {
