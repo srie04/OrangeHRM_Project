@@ -30,7 +30,7 @@ namespace OrangeHRM_Project.utilities
             switch (browserName)
             {
                 case "chrome":
-                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig()); 
                      driver = new ChromeDriver();
                     break;
 
@@ -51,6 +51,10 @@ namespace OrangeHRM_Project.utilities
 
         }
 
+        //This method is to Read the testdata from Json File
+        //Whoever want to access the data from Json file use this method and pass
+        //the Json key in method parameter
+
         public static String readJson(String token)
         {
             String jsonString = File.ReadAllText("testdata/login.json");
@@ -66,6 +70,6 @@ namespace OrangeHRM_Project.utilities
         {
             driver.Quit();
         }
-        //Close browser
+       
     }
 }

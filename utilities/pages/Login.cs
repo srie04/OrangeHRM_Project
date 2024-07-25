@@ -26,7 +26,7 @@ namespace OrangeHRM_Project.utilities.pages
 
         public Login() 
         {
-             openBrowser();
+            openBrowser();
             //Initialize the webelements with the driver
            
            // openBrowser();
@@ -42,7 +42,9 @@ namespace OrangeHRM_Project.utilities.pages
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("username")));
             usernameBox.SendKeys(username);
             passwordBox.SendKeys(Password);
-          //  loginButton.Click();
+            loginButton.Click();
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Admin']")));
 
         }
 
