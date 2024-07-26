@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OrangeHRM_Project
-build_property.ProjectDir = C:\Users\Sridhar.Elumalai\source\repos\OrangeHRM_Project\
+build_property.ProjectDir = C:\Users\mathu\OrangeHRM_Project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1745,19 +1745,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sridhar.Elumalai\\.nuget\\packages\\": {}
+    "C:\\Users\\mathu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sridhar.Elumalai\\source\\repos\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
+      "projectUniqueName": "C:\\Users\\mathu\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
       "projectName": "OrangeHRM_Project",
-      "projectPath": "C:\\Users\\Sridhar.Elumalai\\source\\repos\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
-      "packagesPath": "C:\\Users\\Sridhar.Elumalai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sridhar.Elumalai\\source\\repos\\OrangeHRM_Project\\obj\\",
+      "projectPath": "C:\\Users\\mathu\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
+      "packagesPath": "C:\\Users\\mathu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathu\\OrangeHRM_Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sridhar.Elumalai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mathu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
