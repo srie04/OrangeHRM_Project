@@ -1745,19 +1745,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sridhar.Elumalai\\.nuget\\packages\\": {}
+    "C:\\Users\\manju\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sridhar.Elumalai\\source\\repos\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
+      "projectUniqueName": "C:\\Users\\manju\\OneDrive\\Desktop\\Project\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
       "projectName": "OrangeHRM_Project",
-      "projectPath": "C:\\Users\\Sridhar.Elumalai\\source\\repos\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
-      "packagesPath": "C:\\Users\\Sridhar.Elumalai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sridhar.Elumalai\\source\\repos\\OrangeHRM_Project\\obj\\",
+      "projectPath": "C:\\Users\\manju\\OneDrive\\Desktop\\Project\\OrangeHRM_Project\\OrangeHRM_Project.csproj",
+      "packagesPath": "C:\\Users\\manju\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\manju\\OneDrive\\Desktop\\Project\\OrangeHRM_Project\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Sridhar.Elumalai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\manju\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1858,7 +1863,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
