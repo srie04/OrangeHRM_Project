@@ -1,4 +1,5 @@
-﻿using OrangeHRM_Project.utilities.pages;
+﻿using OrangeHRM_Project.utilities;
+using OrangeHRM_Project.utilities.pages;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace OrangeHRM_Project.test
 {
-    internal class Admin_Users_Test : Admin_Users
+    internal class Admin_Users_Test
     {
         [SetUp]
         public void setup()
         {
+            
             Login login = new Login(); //Openbrowser, 
 
             login.performLogin("Admin", "admin123"); //Login Complete
@@ -23,7 +25,7 @@ namespace OrangeHRM_Project.test
         {
             Admin_Users admin_Users = new Admin_Users();
             admin_Users.addUser();
-
+            admin_Users.deleteUser();
         }
 
         

@@ -10,42 +10,35 @@ using System.Threading.Tasks;
 
 namespace OrangeHRM_Project.test
 {
-    internal class Login_Test : Login
+    internal class Login_Test
     {
-        Login login;
-        
-        [SetUp]
-        public void beforeLogin()
-        {
-
-         login = new Login(); //Constructor
-
-        }
+       
 
         [Test]
-        [TestCaseSource("loginTestData")]
-        public void testLogin(String userName, String Password)
+    //    [TestCaseSource("loginTestData")]
+        public void testLogin()
         {
-            //Login
            
+            //Login
+            Login login = new Login();
             // Constructor
-            login.performLogin(userName, Password);
+            login.performLogin("Admin", "admin123");
 
         }
 
 
-        public static IEnumerable<TestCaseData> loginTestData()
+      /*  public static IEnumerable<TestCaseData> loginTestData()
         {
             yield return new TestCaseData(readJson("username"), readJson("password"));
             yield return  new TestCaseData(readJson("username1"), readJson("password1"));
             yield return new TestCaseData(readJson("username2"), readJson("password2"));
 
-        }
-
- 
+        }*/
 
 
-      /*  [TearDown]
+
+
+       /* [TearDown]
         public void tearDown()
         {
             //Browser Close

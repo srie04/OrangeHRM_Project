@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using System.Runtime.CompilerServices;
+using OrangeHRM_Project.utilities;
 
 namespace OrangeHRM_Project.utilities.pages
 {
     internal class Login : BaseClass
     {
-      
+        
         //openBroswer > BaseClass
         //PageFactory
         [FindsBy(How = How.Name, Using = "username")]
@@ -24,27 +25,29 @@ namespace OrangeHRM_Project.utilities.pages
         [FindsBy(How =How.TagName, Using = "button")]
         private IWebElement loginButton;
 
-        public Login() 
+        public Login()
         {
-            openBrowser();
+
             //Initialize the webelements with the driver
+            
+            openBrowser();
            
-           // openBrowser();
-            PageFactory.InitElements(driver, this);
+            PageFactory.InitElements(BaseClass.driver, this);
+            
         }
 
         //Perform login
         public void performLogin(String username, String Password)
 
         {
-          
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+         
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("username")));
             usernameBox.SendKeys(username);
             passwordBox.SendKeys(Password);
             loginButton.Click();
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Admin']")));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//img[@alt='client brand banner']")));
 
         }
 

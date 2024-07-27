@@ -17,11 +17,11 @@ namespace OrangeHRM_Project.utilities
     internal class BaseClass
     {
        public static IWebDriver driver;
-        public static WebDriverWait wait; 
+     //   public static WebDriverWait wait; 
 
         //Open broswer
         
-        public static void openBrowser() //Chrome, Firefox, edge
+        public void openBrowser() //Chrome, Firefox, edge
         {
 
             String browserName = ConfigurationManager.AppSettings["browser"];
