@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using InputSimulatorEx;
 using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 
 namespace OrangeHRM_Project.utilities.pages
 {
@@ -49,7 +50,18 @@ namespace OrangeHRM_Project.utilities.pages
         [FindsBy(How = How.XPath, Using = "//span[text()='Strong ']")]
         private IWebElement passwordStrength;
 
+        //Delete Users
 
+        //div[text()='Sridhar']/../../div/div/div/label/input
+        [FindsBy(How = How.XPath, Using = "//div[text()='Sridhar']/../../div/div/div/label/input")]
+        private IWebElement checkbox;
+
+        [FindsBy(How = How.XPath, Using = "(//div[text()='Sridhar']/../following-sibling::div/div/button)[1]")]
+        private IWebElement deleteIcon;
+
+        //button[normalize-space()='Yes, Delete']
+        [FindsBy(How =How.XPath, Using = "//button[normalize-space()='Yes, Delete']")]
+        private IWebElement confirmDelete;
 
         public Admin_Users()
         {
@@ -94,7 +106,19 @@ namespace OrangeHRM_Project.utilities.pages
 
         public void deleteUser()
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("(//div[text()='Sridhar']/../following-sibling::div/div/button)[1]")));
 
+            scroll(checkbox);
+            Actions action = new Actions(driver);
+            action.MoveToElement(checkbox).Click().Perform();
+           // checkbox.Click();
+           
+           // wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Yes, Delete']")));
+            action.MoveToElement(deleteIcon).Click().Perform();
+
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//button[normalize-space()='Yes, Delete']")));
+            confirmDelete.Click();
         }
 
     }

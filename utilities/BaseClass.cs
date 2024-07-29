@@ -71,5 +71,11 @@ namespace OrangeHRM_Project.utilities
             driver.Quit();
         }
        
+
+        public void scroll(IWebElement element)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+        }
     }
 }

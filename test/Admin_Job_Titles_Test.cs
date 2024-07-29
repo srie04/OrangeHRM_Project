@@ -8,5 +8,6 @@ namespace OrangeHRM_Project.test
 {
     internal class Admin_Job_Titles_Test
     {
+
     }
 }
