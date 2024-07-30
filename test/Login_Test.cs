@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using Newtonsoft.Json.Linq;
 using OrangeHRM_Project.utilities;
 using OrangeHRM_Project.utilities.pages;
 using System;
@@ -9,32 +10,35 @@ using System.Threading.Tasks;
 
 namespace OrangeHRM_Project.test
 {
-    internal class Login_Test : Login
+    internal class Login_Test
     {
-        Login login;
-        
-        [SetUp]
-        public void beforeLogin()
-        {
-            //Openbrowser
-
-          
-            
-             login = new Login();
-
-        }
+       
 
         [Test]
-        public void testLogin()
+        [TestCaseSource("loginTestData")]
+        public void testLogin(String username, String password)
         {
-            //Login
            
+            //Login
+            Login login = new Login();
             // Constructor
-            login.performLogin();
+            login.performLogin(username, password);
 
         }
 
-      /*  [TearDown]
+
+        public static IEnumerable<TestCaseData> loginTestData()
+        {
+            yield return new TestCaseData(BaseClass.readJson("username"), BaseClass.readJson("password"));
+            yield return  new TestCaseData(BaseClass.readJson("username1"), BaseClass.readJson("password1"));
+            yield return new TestCaseData(BaseClass.readJson("username2"), BaseClass.readJson("password2"));
+
+        }
+
+
+
+
+       /* [TearDown]
         public void tearDown()
         {
             //Browser Close

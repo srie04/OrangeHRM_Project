@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json.Linq;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
@@ -16,7 +17,7 @@ namespace OrangeHRM_Project.utilities
     internal class BaseClass
     {
        public static IWebDriver driver;
-        public static WebDriverWait wait; 
+     //   public static WebDriverWait wait; 
 
         //Open broswer
         
@@ -29,7 +30,7 @@ namespace OrangeHRM_Project.utilities
             switch (browserName)
             {
                 case "chrome":
-                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
+                    new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig()); 
                      driver = new ChromeDriver();
                     break;
 
@@ -50,11 +51,31 @@ namespace OrangeHRM_Project.utilities
 
         }
 
+        //This method is to Read the testdata from Json File
+        //Whoever want to access the data from Json file use this method and pass
+        //the Json key in method parameter
+
+        public static String readJson(String token)
+        {
+            String jsonString = File.ReadAllText("testdata/login.json");
+
+            JToken jsonObject = JToken.Parse(jsonString);
+
+            String value = jsonObject.SelectToken(token).Value<String>();
+
+            return value;
+        }
 
         public static void closeBrowser()
         {
             driver.Quit();
         }
-        //Close browser
+       
+
+        public void scroll(IWebElement element)
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+        }
     }
 }
