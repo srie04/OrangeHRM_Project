@@ -15,25 +15,25 @@ namespace OrangeHRM_Project.test
        
 
         [Test]
-    //    [TestCaseSource("loginTestData")]
-        public void testLogin()
+        [TestCaseSource("loginTestData")]
+        public void testLogin(String username, String password)
         {
            
             //Login
             Login login = new Login();
             // Constructor
-            login.performLogin("Admin", "admin123");
+            login.performLogin(username, password);
 
         }
 
 
-      /*  public static IEnumerable<TestCaseData> loginTestData()
+        public static IEnumerable<TestCaseData> loginTestData()
         {
-            yield return new TestCaseData(readJson("username"), readJson("password"));
-            yield return  new TestCaseData(readJson("username1"), readJson("password1"));
-            yield return new TestCaseData(readJson("username2"), readJson("password2"));
+            yield return new TestCaseData(BaseClass.readJson("username"), BaseClass.readJson("password"));
+            yield return  new TestCaseData(BaseClass.readJson("username1"), BaseClass.readJson("password1"));
+            yield return new TestCaseData(BaseClass.readJson("username2"), BaseClass.readJson("password2"));
 
-        }*/
+        }
 
 
 
