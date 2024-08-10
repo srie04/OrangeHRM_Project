@@ -66,13 +66,13 @@ namespace OrangeHRM_Project.utilities.pages
         public Admin_Users()
         {
             
-            PageFactory.InitElements(driver,this);
+            PageFactory.InitElements(driver.Value,this);
         }
 
         public void addUser()
         {
             admin.Click();
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver.Value, TimeSpan.FromSeconds(5));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(addBtn));
             addBtn.Click();
             Thread.Sleep(2000);
@@ -97,20 +97,21 @@ namespace OrangeHRM_Project.utilities.pages
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElement(passwordStrength, "Strong"));
             confirmPasswordBox.SendKeys("Abcdefghijkl1");
 
-            saveBtn.Click();
+     //       saveBtn.Click();
 
 
 
 
         }
 
+
         public void deleteUser()
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver.Value, TimeSpan.FromSeconds(10));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("(//div[text()='Sridhar']/../following-sibling::div/div/button)[1]")));
 
             scroll(checkbox);
-            Actions action = new Actions(driver);
+            Actions action = new Actions(driver.Value);
             action.MoveToElement(checkbox).Click().Perform();
            // checkbox.Click();
            

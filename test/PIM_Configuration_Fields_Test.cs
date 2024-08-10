@@ -8,17 +8,11 @@ using OrangeHRM_Project.utilities;
 
 namespace OrangeHRM_Project.test
 {
-    internal class PIM_Configuration_Fields_Test
+   // [Parallelizable(ParallelScope.Self)]
+    internal class PIM_Configuration_Fields_Test : BaseClass
     {
 
-        [SetUp]
-
-        public void setup()
-        {
-            Login login = new Login();
-            login.performLogin("Admin", "admin123");
-
-        }
+       
 
         [Test]
         public void testFields()
@@ -28,10 +22,6 @@ namespace OrangeHRM_Project.test
             //pim.deleteField();
         }
 
-        [TearDown]
-        public void tearDown()
-        {
-           BaseClass.closeBrowser();
-        }
+      
     }
 }

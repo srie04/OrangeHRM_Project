@@ -9,25 +9,27 @@ using System.Threading.Tasks;
 
 namespace OrangeHRM_Project.test
 {
-    internal class Admin_Users_Test
+   // [Parallelizable(ParallelScope.Self)]
+    internal class Admin_Users_Test : BaseClass
     {
-        [SetUp]
-        public void setup()
-        {
-            
-            Login login = new Login(); //Openbrowser, 
 
-            login.performLogin("Admin", "admin123"); //Login Complete
-        }
-        
-        [Test]
+          [Test, Category("Admin")]
+        //    [Parallelizable(ParallelScope.Self)]
         public void Test1()
         {
             Admin_Users admin_Users = new Admin_Users();
             admin_Users.addUser();
+
             admin_Users.deleteUser();
         }
 
+
+        [Test] 
+        public void Test2() 
+        {
+            BaseClass.Sample();
+        
+        }
         
     }
 }

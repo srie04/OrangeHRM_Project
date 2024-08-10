@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 
 namespace OrangeHRM_Project.test
 {
-    internal class Login_Test
+    //[Parallelizable(ParallelScope.Self)]
+    internal class Login_Test : BaseClass
     {
        
 
         [Test]
         [TestCaseSource("loginTestData")]
+       // [Parallelizable(ParallelScope.All)]
         public void testLogin(String username, String password)
         {
            
@@ -28,22 +30,19 @@ namespace OrangeHRM_Project.test
 
 
         public static IEnumerable<TestCaseData> loginTestData()
+
         {
-            yield return new TestCaseData(BaseClass.readJson("username"), BaseClass.readJson("password"));
-            yield return  new TestCaseData(BaseClass.readJson("username1"), BaseClass.readJson("password1"));
-            yield return new TestCaseData(BaseClass.readJson("username2"), BaseClass.readJson("password2"));
+            String[] cred =  BaseClass.readExcel("Admin");
+            yield return new TestCaseData(cred[0], cred[1]);
+            //yield return  new TestCaseData(BaseClass.readJson("username1"), BaseClass.readJson("password1"));
+            //yield return new TestCaseData(BaseClass.readJson("username2"), BaseClass.readJson("password2"));
 
         }
 
 
 
 
-       /* [TearDown]
-        public void tearDown()
-        {
-            //Browser Close
-            closeBrowser();
-        }*/
+      
 
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrangeHRM_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04b245fcec58d1ce663021003f1e5175e1a0872c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9de482fc1cbe4a4cb51c4a8df828a232e00c4b37")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrangeHRM_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrangeHRM_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

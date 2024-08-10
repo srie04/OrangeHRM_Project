@@ -32,7 +32,7 @@ namespace OrangeHRM_Project.utilities.pages
             
             openBrowser();
            
-            PageFactory.InitElements(BaseClass.driver, this);
+            PageFactory.InitElements(BaseClass.driver.Value, this);
             
         }
 
@@ -41,12 +41,12 @@ namespace OrangeHRM_Project.utilities.pages
 
         {
          
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            WebDriverWait wait = new WebDriverWait(driver.Value, TimeSpan.FromSeconds(10));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Name("username")));
             usernameBox.SendKeys(username);
             passwordBox.SendKeys(Password);
             loginButton.Click();
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait = new WebDriverWait(driver.Value,TimeSpan.FromSeconds(10));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//img[@alt='client brand banner']")));
 
         }
